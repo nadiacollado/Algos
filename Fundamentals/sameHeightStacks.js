@@ -7,6 +7,23 @@
 // initialize a count that will increment everytime you move right because we need to keep track of the number of moves this is going to take
 // initialize a sum variable that will add up the number of moves when we hit a lower stack
 
+// Input
+  // [3, 7, 2, 3, 11, 1] --> 12
+  // SORTED
+  // [11, 7, 3, 3, 2, 1]
+  // 1. [7, 7, 3, 3, 2, 1]
+  // 2. [3, 7, 3, 3, 2, 1]
+  // 3. [3, 3, 3, 3, 2, 1]
+  // 4. [2, 3, 3, 3, 2, 1]
+  // 5. [2, 2, 3, 3, 2, 1]
+  // 6. [2, 2, 2, 3, 2, 1]
+  // 7. [2, 2, 2, 2, 2, 1]
+  // 8. [1, 2, 2, 2, 2, 1]
+  // 9. [1, 1, 2, 2, 2, 1]
+  // 10. [1, 1, 1, 2, 2, 1]
+  // 11. [1, 1, 1, 1, 2, 1]
+  // 12. [1, 1, 1, 1, 1, 1]
+
 const stacks = (boxes) => {
 
   let count = 0;
