@@ -35,4 +35,17 @@ class BST {
         }
     }
   }
+  find(val){
+    if (!this.root) return false;
+    let current = this.root;
+    while(current){
+      if (current.val === val) return true;
+      if (val < current.val){
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+    }
+    return false;
+  }
 }
