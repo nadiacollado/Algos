@@ -1,18 +1,10 @@
-// BFS
 
-// Visit every level horizontally
+// DFS
+// Visit every branch completely before moving on
 
-// Steps - Iteratively
-// Create a q (can be an arr) and a var to store the values of nodes visited
-// Place the root note in the q
-// Loop as long as there is anything in the q
-  // dq a node from the q and push the value of the node into the var that stores the nodes
-  // if there is a left property on the note dq'd -- add it to the q
-  // if there is a right property on the note dq'd -- add it to the q
-// return the var that stores the values
-
-// Big O: Space complexity is greater on a wide tree because you're storing all nodes in the q
-
+// PreOrder: process root, then process left to right -- could be useful if you want clone a tree
+// PostOrder: process left, right, then root
+// InOrder: process all left, then process all right -- data will ultimately be sorted! 
 
 class Node {
   constructor(val){
@@ -63,18 +55,37 @@ class BST {
     }
     return false;
   }
-  BFS(){
-    let queue = [];
+  DFSPreOrder(){
     let visited = [];
-    let node = this.root;
-    queue.push(node);
 
-    while (queue.length){
-      node = queue.shift();
-      visited.push(node.val);
-      if (node.left) queue.push(node.left);
-      if (node.right) queue.push(node.right);
+    function traverse(node){
+      visited.push(node.val)
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
     }
+    traverse(this.root);
+    return visited
+  }
+  DFSPostOrder(){
+    let visited = [];
+
+    function traverse(node){
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      visited.push(node.val);
+    }
+    traverse(this.root);
+    return visited;
+  }
+  DFSInOrder(){
+    let visited = [];
+
+    function traverse(node){
+      if (node.left) traverse(node.left);
+      visited.push(node.val);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
     return visited;
   }
 }
