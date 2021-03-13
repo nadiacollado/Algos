@@ -1,1 +1,1 @@
-Algorithm Practice
+Algorithm and DS Practice
