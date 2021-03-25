@@ -17,7 +17,7 @@ Name Height Weight
 Print the sum of duplicates. It should be an integer.
 */
 
-function duplicatesNumber(name, price, weight) {
+function findProductDuplicates(name, price, weight) {
   let map = {};
   let count = 0;
 
