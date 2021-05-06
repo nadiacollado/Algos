@@ -3,6 +3,8 @@
 // Feel free to add new properties
 // and methods to the class.
 
+// O(v + e) timem / O(v) space
+
 class Node {
   constructor(name) {
     this.name = name;
